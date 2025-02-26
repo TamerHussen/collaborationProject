@@ -522,7 +522,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -604,7 +604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c04d7f844d0604a8adfbc79fdf4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedZ: 10
+  targetZ: 3
+  zStep: 0.1
 --- !u!1 &372441220
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372441221}
   - component: {fileID: 372441222}
+  - component: {fileID: 372441223}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -658,6 +660,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &372441223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372441220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3085a5208e45044b9cf18703bb74ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceThreshold: 0.5
 --- !u!1 &446515215
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1014,7 @@ Transform:
   m_GameObject: {fileID: 1335235872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.02, y: 0, z: 0}
+  m_LocalPosition: {x: 5.02, y: 0, z: 3.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1032,7 +1047,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1100,7 +1115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c04d7f844d0604a8adfbc79fdf4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedZ: 10
+  targetZ: 3
+  zStep: 0.1
 --- !u!1 &1477553831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1129,7 @@ GameObject:
   - component: {fileID: 1477553833}
   - component: {fileID: 1477553832}
   - component: {fileID: 1477553835}
+  - component: {fileID: 1477553836}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1162,7 +1179,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1209,6 +1226,33 @@ MonoBehaviour:
   MainCanvas: {fileID: 876348636}
   MainCamera: {fileID: 1477553831}
   obj: {fileID: 297939986}
+--- !u!54 &1477553836
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477553831}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1566187973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1449,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1473,7 +1517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c04d7f844d0604a8adfbc79fdf4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedZ: 10
+  targetZ: 3
+  zStep: 0.1
 --- !u!1 &1984172667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,7 +1624,7 @@ Transform:
   m_GameObject: {fileID: 1999228194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 0, z: -33}
+  m_LocalPosition: {x: 2.76, y: 0, z: 4.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1600,7 +1645,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1680,7 +1725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c04d7f844d0604a8adfbc79fdf4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedZ: 10
+  targetZ: 3
+  zStep: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

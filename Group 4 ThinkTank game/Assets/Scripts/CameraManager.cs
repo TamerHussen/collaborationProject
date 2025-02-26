@@ -1,37 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static event Action OnCameraMoved; // 事件通知
+
     public GameObject MainCanvas;
-
     public GameObject MainCamera;
-
     public GameObject obj;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    private bool hasMoved = false;
+
     void Update()
     {
-        if (MainCanvas.activeSelf == false)
+        if (!MainCanvas.activeSelf && !hasMoved)
         {
-            LookAtObject(obj);
+            MoveCameraToObject(obj);
+            hasMoved = true;
+
+            // 触发事件，通知所有监听的脚本摄像机已更新
+            OnCameraMoved?.Invoke();
+        }
+
+        // DEBUG
+        //Debug.Log("Camera Position: " + MainCamera.transform.position); // 实时打印摄像机位置
+
+        if (!MainCanvas.activeSelf && !hasMoved)
+        {
+            MoveCameraToObject(obj);
+            hasMoved = true;
+            OnCameraMoved?.Invoke();
         }
     }
 
-    void LookAtObject(GameObject target)
+    void MoveCameraToObject(GameObject target)
     {
         if (target != null)
         {
-            MainCamera.transform.LookAt(target.transform.position); // face to object
-
             Vector3 offset = new Vector3(0, 2, -5);
             MainCamera.transform.position = target.transform.position + offset;
+            MainCamera.transform.LookAt(target.transform.position);
         }
     }
 }
