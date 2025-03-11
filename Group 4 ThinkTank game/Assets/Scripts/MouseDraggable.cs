@@ -8,7 +8,7 @@ public class MouseDraggable : MonoBehaviour
     private Vector3 offset;
     private bool isDragging = false;
     public float targetZ = 0f; // 固定 Z 轴
-    public float zStep = 0.5f; // Z 轴变化的步长
+    public float zStep = 1.0f; // Z 轴变化的步长
 
     void Start()
     {
