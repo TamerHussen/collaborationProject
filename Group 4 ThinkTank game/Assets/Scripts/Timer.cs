@@ -5,12 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 //using System.Linq.Expressions;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Timer : MonoBehaviour
 {
 
     public float timeLeft = 300f;
     public bool isRunning = true;
     public TMP_Text timeText;
+
+    public bool isTimeOut = false;
 
 
 
@@ -18,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isTimeOut = false;
         DisplayTime(timeLeft);
     }
 
@@ -31,11 +33,13 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 DisplayTime(timeLeft);
+                isTimeOut = false;
             }
             else
             {
                 timeLeft = 0;
                 isRunning = false;
+                isTimeOut = true;
             }
         }
 
