@@ -7,7 +7,7 @@ public class MouseDraggable : MonoBehaviour
     private Camera mainCam;
     private Vector3 offset;
     private bool isDragging = false;
-    public float targetZ = 0f; // 固定 Z 轴
+    public float targetZ = 0f; // fix z-axis
     public float zStep = 1.0f; // step distance 
 
     // Snap function
@@ -23,7 +23,7 @@ public class MouseDraggable : MonoBehaviour
 
     void UpdateCameraReference()
     {
-        mainCam = Camera.main; // 摄像机移动后更新引用
+        mainCam = Camera.main; // update cam pos
     }
 
     void OnMouseDown()
@@ -57,14 +57,14 @@ public class MouseDraggable : MonoBehaviour
         if (isDragging && !isSnapped) // moving and not snapping yet
         {
             Vector3 newPos = GetMouseWorldPos() + offset;
-            newPos.z = targetZ; // 强制固定 Z 轴
+            newPos.z = targetZ; // furce z axis
             transform.position = newPos;
 
             // 监听滚轮输入
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll != 0)
             {
-                targetZ += scroll * zStep; // 滚轮向上增加 Z，向下减少 Z
+                targetZ += scroll * zStep; // add or decrease z
             }
         }
 
@@ -80,7 +80,7 @@ public class MouseDraggable : MonoBehaviour
     Vector3 GetMouseWorldPos()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Mathf.Abs(mainCam.transform.position.z - targetZ); // 计算到摄像机的深度
+        mousePos.z = Mathf.Abs(mainCam.transform.position.z - targetZ); // cal deepth of cam
         return mainCam.ScreenToWorldPoint(mousePos);
     }
 }

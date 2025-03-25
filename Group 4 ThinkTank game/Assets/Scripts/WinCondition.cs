@@ -1,21 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;  // 用于交互UI元素
+using UnityEngine.UI;  // for UI
 
 public class WinCondition : MonoBehaviour
 {
     public List<MouseDraggable> draggableParts;  // store all draggable parts
     public Transform[] targetPositions;          // store pos
 
-    public GameObject winPanel;                  // 胜利时显示的面板
-    public GameObject losePanel;                 // 失败时显示的面板
+    public GameObject winPanel;                  // Panel of win
+    public GameObject losePanel;                 // Panel of lose
 
     public Timer timer; // Pass isTimeOut variable into here.
     void Start()
     {
-        winPanel.SetActive(false); // 初始化时隐藏胜利面板
-        losePanel.SetActive(false); // 初始化时隐藏失败面板
+        winPanel.SetActive(false); // Init Win Panel
+        losePanel.SetActive(false); // Init Lose Panel
     }
 
     void Update()
@@ -25,6 +25,9 @@ public class WinCondition : MonoBehaviour
         {
             LoseGame();
         }
+
+        // check win condition
+        CheckWinCondition();
     }
 
     // double check each part got snapped
@@ -44,14 +47,14 @@ public class WinCondition : MonoBehaviour
     // Win Condition
     void WinGame()
     {
-        winPanel.SetActive(true);  // 显示胜利面板
-        Time.timeScale = 0;        // 暂停游戏
+        winPanel.SetActive(true);  // show win panel
+        Time.timeScale = 0;        // stop game
     }
 
     // Lose condition (Time out)
     void LoseGame()
     {
-        losePanel.SetActive(true); // 显示失败面板
-        Time.timeScale = 0;        // 暂停游戏
+        losePanel.SetActive(true); // show lose panel
+        Time.timeScale = 0;        // stop game
     }
 }
