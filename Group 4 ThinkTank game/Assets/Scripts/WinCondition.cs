@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;  // for UI
+using UnityEngine.SceneManagement; // for scene management
 
 public class WinCondition : MonoBehaviour
 {
@@ -66,5 +67,17 @@ public class WinCondition : MonoBehaviour
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
         losePanel.SetActive(true); // Show lose panel
         Time.timeScale = 0;        // Stop game
+    }
+
+    // Button function to load next scene
+    public void LoadNextScene()
+    {
+        // You can use "SceneManager.LoadScene" with the name of the next scene
+        // For example, if the next scene is called "Scene2"
+        // SceneManager.LoadScene("Scene2");
+
+        // Or you can load the next scene based on the build index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }
