@@ -12,6 +12,9 @@ public class WinCondition : MonoBehaviour
     public GameObject losePanel;                 // Panel of lose
 
     public Timer timer; // Pass isTimeOut variable into here.
+
+    private bool hasGameEnded = false; // Flag to prevent multiple game ends
+
     void Start()
     {
         winPanel.SetActive(false); // Init Win Panel
@@ -20,14 +23,19 @@ public class WinCondition : MonoBehaviour
 
     void Update()
     {
-        // check time condition
-        if (timer.isTimeOut == true)
+        // Only check for win/lose if the game hasn't ended yet
+        if (hasGameEnded)
+            return;
+
+        // Check if time runs out
+        if (timer.isTimeOut)
         {
             LoseGame();
         }
-
-        // check win condition
-        CheckWinCondition();
+        else if (CheckWinCondition())  // Check win condition only when time is not out
+        {
+            WinGame();
+        }
     }
 
     // double check each part got snapped
@@ -41,20 +49,22 @@ public class WinCondition : MonoBehaviour
             }
         }
 
-        return true;  // return true
+        return true;  // return true when all parts are snapped
     }
 
     // Win Condition
     void WinGame()
     {
-        winPanel.SetActive(true);  // show win panel
-        Time.timeScale = 0;        // stop game
+        hasGameEnded = true;  // Set game ended flag to prevent re-triggering
+        winPanel.SetActive(true);  // Show win panel
+        Time.timeScale = 0;        // Stop game
     }
 
     // Lose condition (Time out)
     void LoseGame()
     {
-        losePanel.SetActive(true); // show lose panel
-        Time.timeScale = 0;        // stop game
+        hasGameEnded = true;  // Set game ended flag to prevent re-triggering
+        losePanel.SetActive(true); // Show lose panel
+        Time.timeScale = 0;        // Stop game
     }
 }
