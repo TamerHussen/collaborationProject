@@ -35,7 +35,7 @@ public class WinCondition : MonoBehaviour
         }
         else if (CheckWinCondition())  // Check win condition only when time is not out
         {
-            WinGame();
+            StartCoroutine(WinGameDelayed()); // Call coroutine instead of direct function
         }
     }
 
@@ -53,10 +53,11 @@ public class WinCondition : MonoBehaviour
         return true;  // return true when all parts are snapped
     }
 
-    // Win Condition
-    void WinGame()
+    // Win Condition with Delay
+    IEnumerator WinGameDelayed()
     {
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
+        yield return new WaitForSeconds(12f); // Wait 2 seconds before showing win screen
         winPanel.SetActive(true);  // Show win panel
         Time.timeScale = 0;        // Stop game
     }
@@ -72,11 +73,6 @@ public class WinCondition : MonoBehaviour
     // Button function to load next scene
     public void LoadNextScene()
     {
-        // You can use "SceneManager.LoadScene" with the name of the next scene
-        // For example, if the next scene is called "Scene2"
-        // SceneManager.LoadScene("Scene2");
-
-        // Or you can load the next scene based on the build index
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
