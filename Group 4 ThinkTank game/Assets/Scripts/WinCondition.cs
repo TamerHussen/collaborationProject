@@ -14,7 +14,7 @@ public class WinCondition : MonoBehaviour
 
     public Timer timer; // Pass isTimeOut variable into here.
 
-    public bool isRunning = true;
+   
 
     private bool hasGameEnded = false; // Flag to prevent multiple game ends
 
@@ -59,10 +59,11 @@ public class WinCondition : MonoBehaviour
     IEnumerator WinGameDelayed()
     {
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
-        yield return new WaitForSeconds(12f); // Wait 2 seconds before showing win screen
+        timer.StopTimer();
+        yield return new WaitForSeconds(5f); // Wait 2 seconds before showing win screen
         winPanel.SetActive(true);  // Show win panel
         Time.timeScale = 0;        // Stop game
-        isRunning = false;
+        
     }
 
     // Lose condition (Time out)

@@ -8,7 +8,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
 
-    public float timeLeft = 300f;
+    public float timeLeft = 120f;
     public bool isRunning = true;
     public TMP_Text timeText;
 
@@ -43,6 +43,12 @@ public class Timer : MonoBehaviour
             }
         }
 
+    }
+
+    public void StopTimer()
+    {
+        isRunning = false;
+        isTimeOut = true;
     }
 
     void DisplayTime (float timeToDisplay)
