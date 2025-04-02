@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: 06d4df8710fd0604f96eb18327815de7
+guid: 3c08f092112aa8a49b46f2e2f30b2d9e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: body
-    second: {fileID: 2100000, guid: 05dfd22f2206e9e40964453a75718222, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bottom
-    second: {fileID: 2100000, guid: 4cee2f1f16609294c860f540b395d555, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: coal
-    second: {fileID: 2100000, guid: 27de3d8c50577b0478ed59152d95e01d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: face
-    second: {fileID: 2100000, guid: 55e488316701de448a0dd75817e9171b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pegs
-    second: {fileID: 2100000, guid: fde7336b03ea0bc4bb15f210056a8d50, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wheels
-    second: {fileID: 2100000, guid: 0fd8266f2607ebf43a217e79f10ef5b6, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
