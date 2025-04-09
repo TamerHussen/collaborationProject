@@ -9,6 +9,7 @@ public class WinCondition : MonoBehaviour
     public List<MouseDraggable> draggableParts;  // store all draggable parts
     public GameObject winPanel;                  // Panel of win
     public GameObject losePanel;                 // Panel of lose
+    public GameObject Model;
 
     public Timer timer; // Pass isTimeOut variable into here.
 
@@ -42,15 +43,15 @@ public class WinCondition : MonoBehaviour
     {
         foreach (MouseDraggable part in draggableParts)
         {
-            // Check if part is snapped and its name is correct (already handled by MouseDraggable script)
-            if (!part.isSnapped || part.gameObject.name != part.partName)
+            if (!part.isSnapped)
             {
-                return false; // If any part is not snapped or the name doesn't match, return false
+                return false; // As long as one part isn't snapped, not a win
             }
         }
 
-        return true;  // Return true when all parts are correctly snapped and named
+        return true; // All parts are snapped
     }
+
 
     // Win Condition with Delay
     IEnumerator WinGameDelayed()
@@ -58,6 +59,7 @@ public class WinCondition : MonoBehaviour
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
         timer.StopTimer();
         yield return new WaitForSeconds(2f); // Wait 2 seconds before showing win screen
+        Destroy(Model);
         winPanel.SetActive(true);  // Show win panel
         Time.timeScale = 0;        // Stop game
     }
