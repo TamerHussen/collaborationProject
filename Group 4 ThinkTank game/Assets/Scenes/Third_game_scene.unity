@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8de952388b881294399b1413eabe2743, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6275e3d03d48fe43913b4e8ebda7b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1000
+  rotationSpeed: 10000
 --- !u!1 &205221962
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6275e3d03d48fe43913b4e8ebda7b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1000
+  rotationSpeed: 10000
 --- !u!1 &457017346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,10 +1664,10 @@ MonoBehaviour:
   newModel: {fileID: 149616591}
   originalModel: {fileID: 389678897}
   objectsToCheck:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1161578546}
+  - {fileID: 3474278484322580146}
+  - {fileID: 5009908229147478582}
+  - {fileID: 995310843}
 --- !u!4 &960893242
 Transform:
   m_ObjectHideFlags: 0
