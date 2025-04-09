@@ -893,7 +893,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -914,7 +914,7 @@ MonoBehaviour:
   targetZ: 0
   zStep: 1
   targetPosition: {fileID: 1341818711}
-  snapDistance: 20
+  snapDistance: 50
   isSnapped: 0
 --- !u!1 &396903055
 GameObject:
@@ -1160,7 +1160,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   targetZ: 0
   zStep: 1
   targetPosition: {fileID: 161551868}
-  snapDistance: 20
+  snapDistance: 50
   isSnapped: 0
 --- !u!1 &471433224
 GameObject:
@@ -1385,7 +1385,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   targetZ: 0
   zStep: 1
   targetPosition: {fileID: 471433226}
-  snapDistance: 20
+  snapDistance: 50
   isSnapped: 0
 --- !u!1 &587505395
 GameObject:
@@ -1873,7 +1873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -18.999878}
+  m_AnchoredPosition: {x: 0, y: -19}
   m_SizeDelta: {x: -518.7129, y: -344.99353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316453594
@@ -1975,7 +1975,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2201,7 +2201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -18.999878}
+  m_AnchoredPosition: {x: 0, y: -19}
   m_SizeDelta: {x: -518.7129, y: -344.99353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754437745
@@ -2563,7 +2563,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2584,7 +2584,7 @@ MonoBehaviour:
   targetZ: 0
   zStep: 1
   targetPosition: {fileID: 2091022576}
-  snapDistance: 20
+  snapDistance: 50
   isSnapped: 0
 --- !u!1 &1947923236
 GameObject:
@@ -2885,8 +2885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432ee46b4eaa7fc48baa6bcca7114502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timelimit: 10
-  currentime: 0
+  TimeLimit: 120
+  Timer: 0
+  LastMousePos: {x: 0, y: 0, z: 0}
 --- !u!4 &2102112866
 Transform:
   m_ObjectHideFlags: 0
