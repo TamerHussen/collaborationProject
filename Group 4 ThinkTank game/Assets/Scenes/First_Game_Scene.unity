@@ -2372,7 +2372,7 @@ MonoBehaviour:
   - {fileID: 4608402927836640245}
   winPanel: {fileID: 1838918806}
   losePanel: {fileID: 938795625}
-  Model: {fileID: 0}
+  Model: {fileID: 729224458}
   timer: {fileID: 393516746}
 --- !u!4 &2093015300
 Transform:
@@ -2709,7 +2709,7 @@ PrefabInstance:
     - target: {fileID: 1476425025073361261, guid: da46333ccb1042a43a1cd0905941cc3c, type: 3}
       propertyPath: targetCollider
       value: 
-      objectReference: {fileID: 1489987958}
+      objectReference: {fileID: 8597725504087421901}
     - target: {fileID: 1476425025073361261, guid: da46333ccb1042a43a1cd0905941cc3c, type: 3}
       propertyPath: targetPosition
       value: 
@@ -2722,6 +2722,14 @@ PrefabInstance:
       propertyPath: targetCollider3D
       value: 
       objectReference: {fileID: 1489987958}
+    - target: {fileID: 3544506557785852918, guid: da46333ccb1042a43a1cd0905941cc3c, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544506557785852918, guid: da46333ccb1042a43a1cd0905941cc3c, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3544506557785852918, guid: da46333ccb1042a43a1cd0905941cc3c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2805,7 +2813,7 @@ PrefabInstance:
       objectReference: {fileID: 637870123}
     - target: {fileID: 5791458349046547489, guid: 380f9e041ba8f12439a2ca84c4f6b3dc, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2843,12 +2851,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1035291101996010560, guid: e03a4ae9bcd3df247a157374940f02da, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3427516273067351189, guid: e03a4ae9bcd3df247a157374940f02da, type: 3}
       propertyPath: targetCollider
       value: 
-      objectReference: {fileID: 180038823}
+      objectReference: {fileID: 8597725504087421903}
     - target: {fileID: 3427516273067351189, guid: e03a4ae9bcd3df247a157374940f02da, type: 3}
       propertyPath: targetPosition
       value: 
@@ -3166,6 +3174,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 34726119674695718, guid: 1dafb9dedea11b64ebeca68c7d63a642, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2986226672760747021, guid: 1dafb9dedea11b64ebeca68c7d63a642, type: 3}
       propertyPath: m_Name
       value: wing2
