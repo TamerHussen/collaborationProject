@@ -76,18 +76,18 @@ public class WinCondition : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene("Second_game_scene");
     }
 
     public void LoadNextScene2()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 2);
+        SceneManager.LoadScene("Third_game_scene");
     }
 
     public void LoadNextScene3()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 3);
+        SceneManager.LoadScene("fourth_game_scene");
     }
 }
