@@ -1,85 +1,90 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;  // for UI
+using UnityEngine.SceneManagement; // for scene management
 
 public class WinCondition : MonoBehaviour
 {
-    public List<MouseDraggable> draggableParts;
-    public Transform[] targetPositions;
+    public List<MouseDraggable> draggableParts;  // store all draggable parts
+    public GameObject winPanel;                  // Panel of win
+    public GameObject losePanel;                 // Panel of lose
 
-    public GameObject winPanel;
-    public GameObject losePanel;
+    public Timer timer; // Pass isTimeOut variable into here.
 
-    public Timer timer;
-
-    private bool hasGameEnded = false;
+    private bool hasGameEnded = false; // Flag to prevent multiple game ends
 
     void Start()
     {
-        Time.timeScale = 1; // Ensure game resumes when scene loads
-        winPanel.SetActive(false);
-        losePanel.SetActive(false);
+        winPanel.SetActive(false); // Init Win Panel
+        losePanel.SetActive(false); // Init Lose Panel
     }
 
     void Update()
     {
+        // Only check for win/lose if the game hasn't ended yet
         if (hasGameEnded)
             return;
 
+        // Check if time runs out
         if (timer.isTimeOut)
         {
             LoseGame();
         }
-        else if (CheckWinCondition())
+        else if (CheckWinCondition())  // Check win condition only when time is not out
         {
-            StartCoroutine(WinGameDelayed());
+            StartCoroutine(WinGameDelayed()); // Call coroutine instead of direct function
         }
     }
 
+    // Check if all parts are snapped and correctly placed by their name
     bool CheckWinCondition()
     {
         foreach (MouseDraggable part in draggableParts)
         {
-            if (!part.isSnapped)
-                return false;
+            // Check if part is snapped and its name is correct (already handled by MouseDraggable script)
+            if (!part.isSnapped || part.gameObject.name != part.partName)
+            {
+                return false; // If any part is not snapped or the name doesn't match, return false
+            }
         }
-        return true;
+
+        return true;  // Return true when all parts are correctly snapped and named
     }
 
+    // Win Condition with Delay
     IEnumerator WinGameDelayed()
     {
-        hasGameEnded = true;
-        timer.StopTimer(); // Pause only the timer
-        yield return new WaitForSeconds(2f); // Let game keep running briefly
-        winPanel.SetActive(true);
-        Time.timeScale = 0f; // Fully pause game after showing win panel
+        hasGameEnded = true;  // Set game ended flag to prevent re-triggering
+        timer.StopTimer();
+        yield return new WaitForSeconds(2f); // Wait 2 seconds before showing win screen
+        winPanel.SetActive(true);  // Show win panel
+        Time.timeScale = 0;        // Stop game
     }
 
+    // Lose condition (Time out)
     void LoseGame()
     {
-        hasGameEnded = true;
-        losePanel.SetActive(true);
-        Time.timeScale = 0;
+        hasGameEnded = true;  // Set game ended flag to prevent re-triggering
+        losePanel.SetActive(true); // Show lose panel
+        Time.timeScale = 0;        // Stop game
     }
 
+    // Button function to load next scene
     public void LoadNextScene()
     {
-        Time.timeScale = 1; // Resume time for next scene
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     public void LoadNextScene2()
     {
-        Time.timeScale = 1;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 2);
     }
 
     public void LoadNextScene3()
     {
-        Time.timeScale = 1;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 3);
     }

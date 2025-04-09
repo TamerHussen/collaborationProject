@@ -11,9 +11,9 @@ public class MouseDraggable : MonoBehaviour
     public float zStep = 1.0f; // step distance 
 
     // Snap function
-    public Transform targetPosition;  // target pos
-    public float snapDistance = 0.5f; // snap distance
+    public Collider targetCollider;  // 目标触发器
     public bool isSnapped = false;   // bool check if snap
+    public string partName;          // 部件名称，用于检查是否为正确的部件
 
     void Start()
     {
@@ -39,28 +39,24 @@ public class MouseDraggable : MonoBehaviour
     {
         isDragging = false;
 
-        // check if close enough to start auto snap
-        Vector3 currentPos = transform.position;
-        Vector3 targetPos = targetPosition.position;
-
-        float distance = Vector2.Distance(new Vector2(currentPos.x, currentPos.y), new Vector2(targetPos.x, targetPos.y));
-
-        if (distance < snapDistance)
+        // Check if part name matches and it is within the trigger
+        if (targetCollider != null && targetCollider.bounds.Contains(transform.position) && gameObject.name == partName)
         {
-            transform.position = new Vector3(targetPos.x, targetPos.y, currentPos.z);
             isSnapped = true;
+            gameObject.SetActive(false); // Hide the part when it is correctly placed
+            Debug.Log(gameObject.name + " is snapped and hidden!");
         }
     }
 
     void Update()
     {
-        if (isDragging && !isSnapped) // moving and not snapping yet
+        if (isDragging && !isSnapped) // moving and not snapped yet
         {
             Vector3 newPos = GetMouseWorldPos() + offset;
-            newPos.z = targetZ; // furce z axis
+            newPos.z = targetZ; // force z axis
             transform.position = newPos;
 
-            // 监听滚轮输入
+            // Handle mouse scroll wheel to adjust the z-axis depth
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll != 0)
             {
@@ -68,19 +64,18 @@ public class MouseDraggable : MonoBehaviour
             }
         }
 
-        // snapped -> unmoveable
+        // Snapped -> unmovable
         if (isSnapped)
         {
-            transform.position = targetPosition.position; // make sure obj stay in target pos
-            Destroy(gameObject);
-            Debug.Log("Part is snapped!");
+            transform.position = targetCollider.transform.position; // Ensure the part is "snapped" to the trigger area
         }
     }
 
+    // Convert mouse position to world position
     Vector3 GetMouseWorldPos()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Mathf.Abs(mainCam.transform.position.z - targetZ); // cal deepth of cam
+        mousePos.z = Mathf.Abs(mainCam.transform.position.z - targetZ); // Calculate depth of camera
         return mainCam.ScreenToWorldPoint(mousePos);
     }
 }
