@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         isTimeOut = false;
         isRunning = true;
         DisplayTime(timeLeft);

@@ -58,7 +58,7 @@ public class WinCondition : MonoBehaviour
     {
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
         timer.StopTimer();
-        yield return new WaitForSeconds(2f); // Wait 2 seconds before showing win screen
+        yield return new WaitForSeconds(15f); // Wait 2 seconds before showing win screen
         Destroy(Model);
         winPanel.SetActive(true);  // Show win panel
         Time.timeScale = 0;        // Stop game
