@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Idle : MonoBehaviour
 {
-    public float TimeLimit = 120f;
+    public float TimeLimit = 100f;
     public float Timer = 0.0f;
     public Vector3 LastMousePos;
 

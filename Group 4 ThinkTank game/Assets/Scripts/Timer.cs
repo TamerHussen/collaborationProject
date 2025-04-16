@@ -27,6 +27,11 @@ public class Timer : MonoBehaviour
             if (timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
+
+                if(timeLeft < 0)
+                {
+                    timeLeft = 0;
+                }
                 DisplayTime(timeLeft);
             }
             else
@@ -61,6 +66,6 @@ public class Timer : MonoBehaviour
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        timeText.text = string.Format("{00:00} : {1:00}", minutes, seconds);
     }
 }
