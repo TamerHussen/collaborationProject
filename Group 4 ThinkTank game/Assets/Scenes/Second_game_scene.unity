@@ -814,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10000
+  canRotate: 0
 --- !u!1001 &310238354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2761,6 +2762,7 @@ MonoBehaviour:
   losePanel: {fileID: 1129936684}
   Model: {fileID: 242271718}
   timer: {fileID: 60770025}
+  model_Rotation: {fileID: 242271721}
 --- !u!4 &1660044405
 Transform:
   m_ObjectHideFlags: 0
@@ -3260,6 +3262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10000
+  canRotate: 0
 --- !u!1 &2091022574
 GameObject:
   m_ObjectHideFlags: 0

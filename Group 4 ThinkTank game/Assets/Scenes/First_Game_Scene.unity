@@ -2582,6 +2582,7 @@ MonoBehaviour:
   losePanel: {fileID: 352638900}
   Model: {fileID: 729224458}
   timer: {fileID: 393516746}
+  model_Rotation: {fileID: 729224459}
 --- !u!4 &2093015300
 Transform:
   m_ObjectHideFlags: 0

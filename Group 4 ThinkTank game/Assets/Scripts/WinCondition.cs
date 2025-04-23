@@ -15,6 +15,8 @@ public class WinCondition : MonoBehaviour
 
     private bool hasGameEnded = false; // Flag to prevent multiple game ends
 
+    public Model_Rotation model_Rotation;
+
     void Start()
     {
         winPanel.SetActive(false); // Init Win Panel
@@ -23,6 +25,7 @@ public class WinCondition : MonoBehaviour
 
     void Update()
     {
+
         // Only check for win/lose if the game hasn't ended yet
         if (hasGameEnded)
             return;
@@ -58,6 +61,9 @@ public class WinCondition : MonoBehaviour
     {
         hasGameEnded = true;  // Set game ended flag to prevent re-triggering
         timer.StopTimer();
+
+        model_Rotation.canRotate = true;
+
         yield return new WaitForSeconds(15f); // Wait 2 seconds before showing win screen
         Destroy(Model);
         winPanel.SetActive(true);  // Show win panel

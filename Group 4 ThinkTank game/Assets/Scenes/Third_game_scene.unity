@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10000
+  canRotate: 0
 --- !u!1 &205221962
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10000
+  canRotate: 0
 --- !u!1 &438140662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4767371580135216236, guid: df11a3dac82361147b8f144050eca0e4, type: 3}
@@ -2050,6 +2052,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.8000007, y: 7.942507, z: 8.150001}
   m_Center: {x: 0.90214056, y: 14.230852, z: 3.2072184}
+--- !u!1 &1829143135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829143137}
+  - component: {fileID: 1829143136}
+  m_Layer: 0
+  m_Name: Model_Rotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1829143136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829143135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6275e3d03d48fe43913b4e8ebda7b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
+  canRotate: 0
+--- !u!4 &1829143137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829143135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1193.0164, y: 251.93594, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1865960680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1343784022531125912, guid: df11a3dac82361147b8f144050eca0e4, type: 3}
@@ -2116,6 +2164,7 @@ MonoBehaviour:
   losePanel: {fileID: 1452654719}
   Model: {fileID: 149616591}
   timer: {fileID: 1235106816}
+  model_Rotation: {fileID: 149616592}
 --- !u!4 &1892284136
 Transform:
   m_ObjectHideFlags: 0
@@ -5826,3 +5875,4 @@ SceneRoots:
   - {fileID: 1161578549}
   - {fileID: 995310846}
   - {fileID: 2073620644}
+  - {fileID: 1829143137}
