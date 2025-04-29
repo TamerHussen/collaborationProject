@@ -1,13 +1,9 @@
 # Group 4 : Think Tank Touchscreen Interactive Experience​
 
-A touchscreen Interactive experience to explore some of the Think Tank models, by learning facts about each model, incorporating the following:​
- Transportation and Engines area installations​
+A touchscreen Interactive experience to explore some of the ThinkTank vehicles, by using puzzle pieces to create each model.
 
 * Touchscreen​
-* AR​
-* Around 3 stations with power​
-* Visualisations of engines and functionality​
-* Incorporation of media 
+
 
 ## How to Open the Project
 
