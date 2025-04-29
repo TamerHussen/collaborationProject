@@ -1,4 +1,4 @@
-# Group 4
+# Group 4 : Think Tank Touchscreen Interactive Experience​
 
 A touchscreen Interactive experience to explore some of the Think Tank models, by learning facts about each model, incorporating the following:​
  Transportation and Engines area installations​
