@@ -11,9 +11,10 @@ A touchscreen Interactive experience to explore some of the Think Tank models, b
 
 ## How to Open the Project
 
-1. Open the project folder on your computer.
-2. Navigate to the `build` folder.
-3. Open the `build` folder with your preferred editor or environment to view or run the project.
+1. Download the project folder on your computer.
+2. Extract the folder onto your computer.
+3. Navigate to the `build` folder.
+4. Open the `build` folder with your preferred editor or environment to view or run the project.
 
 ## Collaborators
 
